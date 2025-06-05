@@ -6,6 +6,8 @@ import CartButton from "./CartButton";
 import DarkMode from "./DarkMode";
 import LinksDropDown from "./LinksDropDown";
 
+import { Suspense } from "react";
+
 function Navbar() {
   return (
     // In Navbar.tsx (improve flex structure)
@@ -13,7 +15,9 @@ function Navbar() {
       <Container className="flex items-center justify-between gap-4 py-4">
         <div className="flex items-center gap-4">
           <Logo />
-          <NavSearch />
+          <Suspense>
+            <NavSearch />
+          </Suspense>
         </div>
         <div className="flex items-center gap-4">
           <CartButton />
